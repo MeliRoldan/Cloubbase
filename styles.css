@@ -19,8 +19,28 @@ html {
 /*MAIN MENU*/
 
 .navbar {
-    background-color: white;
     padding: 0px 15px;
+}
+
+.navbar-nav {
+    border-radius: 25px;
+    padding: 0px 10px;
+    margin: 20px 0px;
+    position: relative;
+    z-index: 6.666666666666666;
+}
+
+.navbar-nav::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: -5;
+    opacity: 0.5;
+    border-radius: 25px;
 }
 
 .scroll {
@@ -41,6 +61,7 @@ html {
     color: #0C5D51;
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 550;
 }
 
 .nav-link {
@@ -48,6 +69,7 @@ html {
     font-size: 14px;
     color: #023436;
     text-transform: uppercase;
+    font-weight: 550;
 }
 
 .nav-link:hover {
@@ -61,7 +83,7 @@ html {
 /*CAROUSEL HERO BANNER*/
 
 .carousel {
-    height: 87vh;
+    height: 100vh;
 }
 
 .carousel-indicators {
@@ -126,6 +148,16 @@ html {
     }
 }
 
+.black-div{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+}
+
 .carousel-caption {
     height: 70%;
     position: absolute;
@@ -138,7 +170,7 @@ html {
 .carousel-caption h1 {
     position: absolute;
     left: 0%;
-    top: 30%;
+    bottom: 33%;
     text-transform: uppercase;
     font-size: 20px;
     visibility: hidden;
@@ -151,7 +183,7 @@ html {
 .carousel-caption p {
     position: absolute;
     left: 0%;
-    top: 50%;
+    bottom: 13%;
     width: 63.3333333%;
     font-size: 18px;
     text-transform: uppercase;
@@ -160,6 +192,22 @@ html {
     animation-duration: 1s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
+}
+
+.carousel-caption .carousel-btn {
+    position: absolute;
+    width: 20%;
+    left: 0%;
+    bottom: 0%;
+    font-size: 13px;
+    text-transform: uppercase;
+    visibility: hidden;
+    animation-name: text-animation;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    background-color:#037971;
+    color: white;
 }
 
 @keyframes text-animation {
@@ -195,8 +243,8 @@ html {
 }
 
 .card-body {
-    position: relative;
-    z-index: 0;
+    width: 100%;
+    padding: 100px 175px;
 }
 
 .card-body h5 {
@@ -216,10 +264,6 @@ html {
     height: 333px;
 }
 
-.services-big-col {
-    height: 433px;
-}
-
 .services-small-col button {
     padding: 6px 25px;
     text-transform: uppercase;
@@ -233,54 +277,52 @@ html {
     border-color: rgb(62, 169, 161);
 }
 
-.services-big-col button {
+.card-body button {
     position: relative;
     font-size: 13px;
     font-weight: bold;
-    color: #ffffff;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 6px 43px;
     outline: 0;
-    border: 1px solid rgb(5, 88, 82);
-    background-color: rgba(0, 0, 0, 0);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    border: 1px solid #037971;
+    border-radius: 25px;
+    background-color:#037971;;
+    margin: 15px 0px;
 }
 
-.services-big-col button:after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    background-color: rgb(62, 169, 161);
-    width: 100%;
-    z-index: -1;
-    transition: 0.2s;
+
+.card-body button:hover {
+    background-color: white;
+    color: #037971;;
 }
 
-.services-big-col button:hover:after {
-    top: 0px;
-    left: 0px;
+.image-body{
+  width: 100%;
+  height: 55vh;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.services-img {
-    height: 333px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
+.one {
+    background: url("images/event-1.jpg") no-repeat fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
-.services-img-big {
-    height: 433px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
+
+.three {
+    background: url("images/sponsor-9.webp") no-repeat fixed;
+    background-size:auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
+
 
 @media (max-width:576px) {
     .services-small-col {
@@ -324,10 +366,11 @@ html {
     z-index: -2; /* needed to keep in the background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center center;
+    -o-background-size: contain;
+    background-size:auto;
     filter: brightness(85%);
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .benefits-text h5 {

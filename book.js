@@ -7,7 +7,7 @@ for (let i = 0; i < locations.length; i++) {
 const getPrice = (myPrice) => {
   let text = options.options[options.selectedIndex].text;
   let locationShow = document.getElementById('locationTag');
-  locationShow.innerText = text + ":";
+  locationShow.innerText = text;
   switch (text) {
     case "Gudauri":
       myPrice = 250;
@@ -43,9 +43,9 @@ const getQuantity = (myQuantity) => {
   let totalPrice = getPrice();
   let total = myQuantity * totalPrice;
   let quantityShow = document.getElementById('quantityTag');
-  quantityShow.innerText = `Quantity: x${personNum}`;
+  quantityShow.innerText = `* ${personNum} = ${total} GEL`;
   let bookCostShow = document.getElementById('bookCost');
-  bookCostShow.innerText = total + ' GEL';
+  bookCostShow.innerText = total / 2 + ' GEL (50%)';
   return total;
 };
 
