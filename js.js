@@ -1,10 +1,16 @@
-var myNav = document.getElementById("nav");
+$(document).ready(function(){
+  $(".nav-link").on("click", function(){
+    $(".nav-link.active").removeClass(".active");
+    $(this).addClass("active");
+  });
+  
+  $(".booknow-btn").click(function(){
+    window.location = "book.html";
+  });
 
-window.onscroll = function() {
-  "use strict";
-  if (document.body.scrollTop >= 650 || document.documentElement.scrollTop >= 650) {
-    myNav.classList.add("scroll");
-  } else {
-    myNav.classList.remove("scroll");
-  }
-};
+  $(".contactus-btn").click(function(){
+    window.location = "contact.html";
+  });
+
+  fsLightbox.open();
+});

@@ -1,317 +1,579 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
 * {
     box-sizing: border-box;
 }
 
-.nav {
-    background-color: transparent;
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    overflow-y: scroll !important;
+    /*modal*/
+}
+
+.modal-open {
+    padding-right: 0 !important;
+    /*modal*/
+}
+
+/*MAIN MENU*/
+
+.navbar {
+    background-color: white;
+    padding: 0px 15px;
 }
 
 .scroll {
-    background-color: #fff;
+    display: none;
 }
 
-.navbar a {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: normal;
+.navbar-toggler {
+    margin: 5px 0px;
+    box-shadow: none !important;
+}
+
+.flags_div {
+    margin-right: auto;
+    padding: 0px 15px;
+}
+
+.flags_div button {
+    padding: 0px 1px;
+}
+
+.flags_div button:hover {
+    color: forestgreen;
+}
+
+
+.flag {
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+}
+
+.navbar-brand span {
+    color: #0C5D51;
+    text-transform: uppercase;
     font-size: 14px;
 }
 
-.navbar-brand {
-    color: rgb(19, 170, 160);
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-select-trigger .arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+}
+
+.custom-options .custom-option {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-options .custom-option img {
+    margin-right: 10px;
+}
+
+.custom-options .custom-option:hover {
+    background-color: #f1f1f1;
+}
+
+.custom-options .custom-option.selected {
+    background-color: #f1f1f1;
+}
+
+.custom-select.open .custom-options {
+    display: block;
 }
 
 .nav-link {
-    color: black;
-}
-
-.nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #023436;
     text-transform: uppercase;
 }
 
+.nav-link:hover {
+    color: #037971;
+}
+
+.active {
+    color: #037971 !important;
+}
+
+/*CAROUSEL HERO BANNER*/
+
 .carousel {
-    height: 700px;
-    overflow: hidden;
+    height: 90vh;
+}
+
+.carousel-indicators {
+    width: 50%;
+    margin: auto;
+}
+
+.carousel-indicators button {
+    width: 5%;
+}
+
+.carousel-indicators .active {
+    width: 33%;
 }
 
 .carousel-inner {
-    height:100%;    
+    height: 100%;
+    background-color: white;
 }
 
 .carousel-item {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     height: 100%;
+}
+
+.carousel-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    filter: contrast(80%);
+    -webkit-animation: zoom 25s;
+    animation: zoom 25s;
 }
 
 .carousel-img-1 {
-    background-image: url(images/1-img-tbilisi.jpg);
+    background-image: url(images/gudauri-real8-flipped.jpg);
+    background-position: center 75%;
+    filter: contrast(100%);
 }
 
 .carousel-img-2 {
-    background-image: url(images/2-image-gudauri-2.jpg);
-}
-
-.carousel-img-3 {
-    background-image: url(images/3-image-gonio.jpg);
+    background-image: url(images/gudauri-real16-edited.jpg);
+    background-position: center bottom;
 }
 
 .carousel-img-4 {
-    background-image: url(images/4-image-tbilisi.jpg);
+    background-image: url(images/sagarejo-1.jpg);
+    background-position: center center;
+    filter: contrast(95%);
 }
 
 .carousel-img-5 {
-    background-image: url(images/gudauri-2.jpg);
+    background-image: url(images/gudauri-real7.jpg);
+    background-position: center center;
 }
 
-.carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 8%;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    background: 0 0;
-    border: 0;
-    opacity: .5;
-    transition: opacity .15s ease;
-}
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(1, 1);
+    }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 100% 100%;
+    to {
+        -webkit-transform: scale(1.3, 1.3);
+    }
 }
 
 .carousel-caption {
-    font-family: 'Bebas Neue', cursive;
-}
-
-.tbilisi-caption {
+    height: 70%;
     position: absolute;
-    right: 65%;
-    bottom: 30%;
-    left: 15%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    left: 7.33%;
+    top: 55%;
+    transform: translateY(-55%);
     text-align: start;
 }
 
-.tbilisi-caption h5, .tbilisi-caption p {
-    font-size: 50px;
-    color: black;
+.carousel-geo-text {
+    font-size: 23px;
 }
 
-.svaneti-caption {
+.carousel-caption h1 {
     position: absolute;
-    right: 0%;
-    bottom: 25%;
-    left: 30%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    text-align: start;
+    left: 0%;
+    top: 30%;
+    text-transform: uppercase;
+    font-size: 20px;
+    visibility: hidden;
+    animation-name: text-animation;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
 }
 
-.svaneti-caption h5, .svaneti-caption p {
-    font-size: 90px;
-    color: black;
-}
-
-.gonio-caption {
+.carousel-caption p {
     position: absolute;
-    right: 0%;
-    bottom: 20%;
-    left: 20%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    text-align: start;
+    left: 0%;
+    top: 50%;
+    width: 63.3333333%;
+    font-size: 18px;
+    text-transform: uppercase;
+    visibility: hidden;
+    animation-name: text-animation;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
-.gonio-caption h5, .gonio-caption p {
-    font-size: 70px;
-    color: black;
+@keyframes text-animation {
+    from {
+        visibility: hidden;
+        left: 0%;
+    }
+
+    to {
+        visibility: visible;
+        left: 5%;
+    }
 }
 
-.bi-geo-alt-fill {
-    font-size: 50px;
-    position: relative;
-    bottom: 6px;
+@media (max-width: 1050px) {
+    .carousel-caption p {
+        width: 100%;
+    }
 }
 
-.kakheti-caption {
-    position: absolute;
-    right: 0%;
-    bottom: 12%;
-    left: 20%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    text-align: start;
+@media (max-width: 576px) {
+    .carousel-caption p {
+        font-size: 16px;
+    }
 }
 
-.kakheti-caption h5, .kakheti-caption p {
-    font-size: 90px;
-    color: white;
-}
+/*SERVICES LIST*/
 
-.gudauri-caption {
-    position: absolute;
-    right: 0%;
-    bottom: 28%;
-    left: 20%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    text-align: start;
-}
-
-.gudauri-caption h5, .gudauri-caption p {
-    font-size: 90px;
-    color: black;
-    line-height: 73px;
-}
-
-.gudauri-caption .middle {
-    margin-left: 150px;
-}
-
-.gudauri-caption .last {
-    margin-left: 270px;
-}
-
-.services-col img, .services-col .card-body {
-    height: 369px;
-}
-
-.services-col-12 img, .services-col-12 .card-body {
-    height: 453px;
+.card {
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
 }
 
 .card-body {
-    font-family: 'Helvetica Neue', sans-serif;
+    position: relative;
+    z-index: 0;
 }
 
 .card-body h5 {
-    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: .05em;
-    font-size: 35px;
-}
-
-.btn-link {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: normal;
-    letter-spacing: 2px;
-    font-size: 12px;
-    color: rgb(19, 170, 160);
-}
-
-.btn-2 {
-    color: #fff;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 2px;
-    padding: 0;
-    outline: 0;
-}
-
-.btn-2 span {
-    padding: 15px;
-    background-color: rgb(62, 169, 161);
+    letter-spacing: .03em;
+    font-size: 18px;
+    padding: 15px 0px;
 }
 
 .card-service-p {
-    color: rgb(19, 170, 160);
+    color: #037971;
     text-transform: uppercase;
     font-size: 12px;
 }
 
-.card-text {
-    color: #9c9c9c;
-    font-size: 16px;
-    line-height: 27px;
+.services-small-col {
+    height: 333px;
 }
 
-.card-text-lg {
-    color: black;
-    font-size: 16px;
-    line-height: 27px;
+.services-big-col {
+    height: 433px;
 }
 
-.vert {
-    position: relative;
-    top: 0.8px;
-    -webkit-text-stroke: 1px;
+.card-body button {
+    padding: 6px 25px;
+    text-transform: uppercase;
     font-size: 13px;
-}
-
-.footer , .copyright {
-    background-color: rgb(62, 169, 161) ;
-    color: #fff;
-}
-
-.benefits {
-    background-image: url(images/tbilisi-5.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    background-attachment: fixed;
-}
-
-.benefits h5 {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 33px;
-    line-height: 55px;
     font-weight: bold;
-    color: #fff;
+    border-radius: 0%;
 }
 
-.sponsors {
-    height: 100px;
-    overflow: hidden;
-}
-
-.sponsors .card img {
-    width: auto;
-    height: 100%;
-    padding: 30px;
-}
-
-.social {
-    color: #fff;
-    font-size: 25px;
-    margin: 5px;
-}
-
-.footer ul li {
-    font-weight: bold;
-    font-family:'Helvetica Neue', sans-serif;
-}
-
-.book-header {
-    background-image: url(images/book11.jpg);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    height: 620px;
-    background-attachment: fixed;
-}
-
-.btn-book {
-    background-color:rgb(62, 169, 161);
+.card-body button:hover {
+    background-color: rgb(62, 169, 161);
     border-color: rgb(62, 169, 161);
 }
 
-.book-form {
-    background-color: rgba(255, 255, 255, 0.57);
+.services-img {
+    height: 333px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.services-img-big {
+    height: 433px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+@media (max-width:576px) {
+    .services-small-col {
+        height: 450px;
+    }
+
+    .services-big-col {
+        height: 650px;
+    }
+
+    .services-img {
+        height: 225px;
+    }
+
+    .services-img-big {
+        height: 325px;
+    }
+}
+
+.footer,
+.copyright {
+    background-color: rgb(255, 255, 255);
+    color: rgb(62, 169, 161);
+}
+
+.benefits-container {
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefits {
+    background-image: url(images/gudauri-real9-edited.jpg);
+    position: fixed;
+    top: 0;
+    height: 100%; /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -2; /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(50%);
+}
+
+.benefits-text h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 33.333px;
+    font-weight: bold;
+    margin: auto;
+    width: 83%;
+    text-align: center;
+}
+
+.col-img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.col-img-1 {
+    background-image: url(images/athletes-226546.png);
+}
+
+.col-img-2 {
+    background-image: url(images/pngegg.png);
+}
+
+.col-img-3 {
+    background-image: url(images/tbc.jpg);
+}
+
+.col-img-4 {
+    background-image: url(images/Nova_Logo_Red_transparent_Background.png);
+}
+
+.col-img-5 {
+    background-image: url(images/gopro-825822.png);
+}
+
+.social {
+    color: #037971;
+    font-size: 20px;
+    padding-right: 6px;
+}
+
+@media (max-width:768px) and (min-width:362px) {
+    .logo-div {
+        margin: auto;
+    }
+}
+
+.footer ul {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer ul li a,
+.footer ul li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #037971;
+    text-decoration: none;
+}
+
+.footer ul li a:hover,
+.footer ul li:hover {
+    color: #03b5aa;
+}
+
+.bi:hover {
+    color: #03b5aa;
+}
+
+.l-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.btn-book {
+    background-color: rgb(62, 169, 161);
+    border-color: rgb(62, 169, 161);
+    text-transform: uppercase;
+}
+
+.video-div {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    width: 100%;
+    height: 80vh;
+}
+
+@media (max-width:1050px) {
+    video {
+        height: 70vh;
+    }
+}
+
+@media (max-width:1050px) {
+    video {
+        height: 50vh;
+    }
+}
+
+.card-title {
+    text-transform: uppercase;
+}
+
+.card-img-top {
+    height: auto;
+}
+
+.contact-map-row i {
+    font-size: 16px;
+}
+
+.contact-map-row .card a {
+    color: rgb(19, 170, 160);
+    font-weight: 600;
+}
+
+.contact-map-row .card a:hover {
+    color: green;
+}
+
+
+.about-img-1, .about-img-2, .about-img-3, .about-img-4 {
+    background-size: cover;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+.about-img-1 {
+    background-image: url(images/fb-team1.jpg);
+}
+
+.about-img-2 {
+    background-image: url(images/fb-team2.jpg);
+}
+
+.about-img-3 {
+    background-image: url(images/fb-team3.jpg);
+}
+
+.about-img-4 {
+    background-image: url(images/fb-team5.jpg);
+    background-position: center 40%;
+}
+
+@media (max-width: 800px) {
+    .images-flex {
+        flex-wrap:wrap;
+    }
+
+    .images-flex img {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.contact-header {
+    height: 334px;
+}
+
+.contact-header-div {
+    background-image: url(images/team-4.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* fix for mobile browser address bar appearing disappearing */
+    z-index: -2;
+    /* needed to keep in the background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    filter: grayscale(50%);
 }
