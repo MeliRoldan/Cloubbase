@@ -189,13 +189,13 @@ html {
 
 .carousel-img-1 {
     background-image: url(images/gudauri-real9-edited.jpg);
-    background-position: 30% 50%;
+    background-position: 40% 50%;
     filter: contrast(100%);
 }
 
 .carousel-img-2 {
     background-image: url(images/gudauri-real16-edited.jpg);
-    background-position: 80% bottom;
+    background-position: 65% bottom;
     filter: brightness(70%);
 }
 
