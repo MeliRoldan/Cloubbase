@@ -41,6 +41,7 @@ html {
 
 .flags_div button {
     padding: 0px 1px;
+    border: 1px solid gainsboro;
 }
 
 .flags_div button:hover {
@@ -51,13 +52,16 @@ html {
 .flag {
     border: none;
     background-color: white;
-    font-size: 14px;
+    font-size: 13px;
     color: black;
+}
+
+.navbar-brand {
+    margin: 0;
 }
 
 .navbar-brand span {
     color: #0C5D51;
-    text-transform: uppercase;
     font-size: 14px;
 }
 
@@ -184,25 +188,27 @@ html {
 }
 
 .carousel-img-1 {
-    background-image: url(images/gudauri-real8-flipped.jpg);
-    background-position: center 75%;
+    background-image: url(images/gudauri-real9-edited.jpg);
+    background-position: 30% 50%;
     filter: contrast(100%);
 }
 
 .carousel-img-2 {
     background-image: url(images/gudauri-real16-edited.jpg);
-    background-position: center bottom;
+    background-position: 80% bottom;
+    filter: brightness(70%);
 }
 
 .carousel-img-4 {
     background-image: url(images/sagarejo-1.jpg);
     background-position: center center;
-    filter: contrast(95%);
+    filter: brightness(85%);
 }
 
 .carousel-img-5 {
     background-image: url(images/gudauri-real7.jpg);
     background-position: center center;
+    filter: brightness(70%);
 }
 
 @-webkit-keyframes zoom {
@@ -224,7 +230,7 @@ html {
     text-align: start;
 }
 
-.carousel-geo-text {
+.data-tran-geo {
     font-size: 23px;
 }
 
@@ -367,7 +373,7 @@ html {
 }
 
 .benefits-container {
-    height: 500px;
+    height: 400px;
     position: relative;
     display: flex;
     align-items: center;
@@ -375,7 +381,7 @@ html {
 }
 
 .benefits {
-    background-image: url(images/gudauri-real9-edited.jpg);
+    background-image: url(images/cloud2.jpg);
     position: fixed;
     top: 0;
     height: 100%; /* fix for mobile browser address bar appearing disappearing */
@@ -386,20 +392,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: center center;
-    filter: grayscale(50%);
-}
-
-.benefits-text h5 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: white;
-    text-transform: uppercase;
-    line-height: 33.333px;
-    font-weight: bold;
-    margin: auto;
-    width: 83%;
-    text-align: center;
+    background-position: center top;
 }
 
 .col-img {
@@ -492,9 +485,9 @@ video {
     }
 }
 
-@media (max-width:1050px) {
+@media (max-width:750px) {
     video {
-        height: 50vh;
+        height: 40vh;
     }
 }
 
@@ -560,9 +553,9 @@ video {
 }
 
 .contact-header-div {
-    background-image: url(images/fb-team4.jpg);
+    background-image: url(images/gudauri-real11-cover1.jpg);
     background-size: cover;
-    background-position: center top;
+    background-position: center 5%;
     background-repeat: no-repeat;
     height: 100%;
     /* fix for mobile browser address bar appearing disappearing */
@@ -575,5 +568,9 @@ video {
     top: 0;
     left: 0;
     right: 0;
-    filter: grayscale(50%);
+    
+}
+
+.copy , .email-text {
+    text-transform: none;
 }
