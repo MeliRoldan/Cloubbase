@@ -370,8 +370,7 @@ html {
     }
 }
 
-.footer,
-.copyright {
+.footer {
     background-color: rgb(255, 255, 255);
     color: rgb(62, 169, 161);
 }
@@ -557,4 +556,6 @@ video {
 
 .copy , .email-text {
     text-transform: none;
+    color: rgb(62, 169, 161);
+    text-decoration: none;
 }
